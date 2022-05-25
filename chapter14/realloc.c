@@ -2,15 +2,43 @@
 #include <stdlib.h>
 #include <string.h>
 
-//初始化分配 100 * 4
-static int a* = malloc(sizeof(int) * 100);
-static int p* = a;
+struct vec
+{
+    int *start;
+    int *now;
+    int *end;
+};
 
-int alloc() {
-    
+static struct vec vecs[100];
+
+int set(int a, int b, int var)
+{
+    if (a > 100)
+        return -1;
+    struct vec v = vecs[a];
+    if ((v.end - v.now) <= 0)
+    {
+        int *t = realloc(v.start, (v.end - v.start) * 2 * sizeof(int));
+        if (t == NULL)
+            return -1;
+        v.end = v.start + (v.end - v.start) * 2;
+    }
+    *v.now++ = var;
+    return 1;
 }
 
-int main() {
-    int a* = NULL;
+int get(int a, int b, int *var)
+{
+    if (a > 100)
+        return -1;
+    struct vec v = vecs[a];
+    if (b > (v.now - v.start))
+        return -1;
+    else
+        *var = v.now[b];
+    return 1;
+}
 
+int main()
+{
 }
