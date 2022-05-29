@@ -7,8 +7,8 @@
 #include <sys/time.h> //for gettimeofday and timeval
 
 float diffTime(struct timeval *start, struct timeval *end) {
-  return (float)(end->tv_sec * 1e9 + end->tv_usec -
-                 start->tv_sec * 1e9 - start->tv_usec);
+  return (float)(end->tv_sec * 1e6 + end->tv_usec -
+                 start->tv_sec * 1e6 - start->tv_usec);
 }
 
 int main(int argc, char **argv) {
