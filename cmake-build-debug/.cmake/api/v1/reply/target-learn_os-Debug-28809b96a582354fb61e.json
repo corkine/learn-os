@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "chapter30/semaphore.c",
+			"path" : "chapter33/select.c",
 			"sourceGroupIndex" : 0
 		}
 	],

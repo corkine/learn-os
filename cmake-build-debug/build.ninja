@@ -49,11 +49,11 @@ cmake_ninja_workdir = C$:/Users/mazhangjing/Desktop/learn-os/cmake-build-debug/
 
 build cmake_object_order_depends_target_learn_os: phony || CMakeFiles/learn_os.dir
 
-build CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj: C_COMPILER__learn_os_Debug C$:/Users/mazhangjing/Desktop/learn-os/chapter30/semaphore.c || cmake_object_order_depends_target_learn_os
-  DEP_FILE = CMakeFiles\learn_os.dir\chapter30\semaphore.c.obj.d
+build CMakeFiles/learn_os.dir/chapter33/select.c.obj: C_COMPILER__learn_os_Debug C$:/Users/mazhangjing/Desktop/learn-os/chapter33/select.c || cmake_object_order_depends_target_learn_os
+  DEP_FILE = CMakeFiles\learn_os.dir\chapter33\select.c.obj.d
   FLAGS = -g -std=gnu11
   OBJECT_DIR = CMakeFiles\learn_os.dir
-  OBJECT_FILE_DIR = CMakeFiles\learn_os.dir\chapter30
+  OBJECT_FILE_DIR = CMakeFiles\learn_os.dir\chapter33
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj: C_COMPILER__learn_os_De
 #############################################
 # Link the executable learn_os.exe
 
-build learn_os.exe: C_EXECUTABLE_LINKER__learn_os_Debug CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj
+build learn_os.exe: C_EXECUTABLE_LINKER__learn_os_Debug CMakeFiles/learn_os.dir/chapter33/select.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\learn_os.dir
