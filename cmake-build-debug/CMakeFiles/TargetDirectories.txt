@@ -1,0 +1,3 @@
+C:/Users/mazhangjing/Desktop/learn-os/cmake-build-debug/CMakeFiles/learn_os.dir
+C:/Users/mazhangjing/Desktop/learn-os/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mazhangjing/Desktop/learn-os/cmake-build-debug/CMakeFiles/rebuild_cache.dir

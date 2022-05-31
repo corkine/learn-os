@@ -1,0 +1,21 @@
+# ninja log v5
+3	140	6756686361220067	CMakeFiles/learn_os.dir/chapter30/basic.c.obj	d6f16f6e3dee040b
+141	338	6756686363140070	learn_os.exe	631fb064c6f77274
+0	209	6756790000780801	CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj	c707fd1cd1fbb63b
+210	478	6756790003400998	learn_os.exe	f8bb1e00479a102f
+3	142	6756790686978846	CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj	c707fd1cd1fbb63b
+143	340	6756790688888852	learn_os.exe	f8bb1e00479a102f
+2	155	6756790884539577	CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj	c707fd1cd1fbb63b
+155	368	6756790886609568	learn_os.exe	f8bb1e00479a102f
+2	142	6756790994855689	CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj	c707fd1cd1fbb63b
+143	351	6756790996885690	learn_os.exe	f8bb1e00479a102f
+2	146	6756791076475737	CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj	c707fd1cd1fbb63b
+147	340	6756791078345753	learn_os.exe	f8bb1e00479a102f
+2	152	6756792209626843	CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj	c707fd1cd1fbb63b
+152	349	6756792211526837	learn_os.exe	f8bb1e00479a102f
+3	139	6756792445663243	CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj	c707fd1cd1fbb63b
+140	340	6756792447583552	learn_os.exe	f8bb1e00479a102f
+2	139	6756792638923086	CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj	c707fd1cd1fbb63b
+140	343	6756792640875998	learn_os.exe	f8bb1e00479a102f
+3	140	6756793542100410	CMakeFiles/learn_os.dir/chapter30/semaphore.c.obj	c707fd1cd1fbb63b
+141	342	6756793544040720	learn_os.exe	f8bb1e00479a102f
