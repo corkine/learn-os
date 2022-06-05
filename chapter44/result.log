@@ -1,0 +1,1827 @@
+ARG seed 0
+ARG num_cmds 1000
+ARG op_percentages 40/50/10
+ARG skew 20/80
+ARG skew_start 100
+ARG read_fail 0
+ARG cmd_list 
+ARG ssd_type log
+ARG num_logical_pages 80
+ARG num_blocks 12
+ARG pages_per_block 10
+ARG high_water_mark 10
+ARG low_water_mark 8
+ARG erase_time 1000
+ARG program_time 40
+ARG read_time 10
+ARG show_gc True
+ARG show_state False
+ARG show_cmds True
+ARG quiz_cmds False
+ARG show_stats True
+ARG compute False
+
+FTL   (empty)
+Block 0          1          2          3          4          5          6          7          8          9          10         11         
+Page  0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 1111111111 1111111111 
+      0000000000 1111111111 2222222222 3333333333 4444444444 5555555555 6666666666 7777777777 8888888888 9999999999 0000000000 1111111111 
+      0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 
+State iiiiiiiiii iiiiiiiiii iiiiiiiiii iiiiiiiiii iiiiiiiiii iiiiiiiiii iiiiiiiiii iiiiiiiiii iiiiiiiiii iiiiiiiiii iiiiiiiiii iiiiiiiiii 
+Data                                                                                                                                      
+Live                                                                                                                                      
+
+cmd   0:: write(60, q) -> success
+cmd   1:: write(62, i) -> success
+cmd   2:: write(46, U) -> success
+cmd   3:: write(22, K) -> success
+cmd   4:: write(20, U) -> success
+cmd   5:: trim(20) -> success
+cmd   6:: trim(62) -> success
+cmd   7:: write(71, G) -> success
+cmd   8:: write(8, q) -> success
+cmd   9:: write(73, X) -> success
+cmd  10:: write(69, g) -> success
+cmd  11:: write(43, 0) -> success
+cmd  12:: write(31, P) -> success
+cmd  13:: write(0, u) -> success
+cmd  14:: write(19, k) -> success
+cmd  15:: write(15, z) -> success
+cmd  16:: read(0) -> u
+cmd  17:: write(6, j) -> success
+cmd  18:: write(74, 6) -> success
+cmd  19:: write(56, x) -> success
+cmd  20:: write(43, X) -> success
+cmd  21:: write(47, r) -> success
+cmd  22:: write(30, z) -> success
+cmd  23:: read(71) -> G
+cmd  24:: write(52, t) -> success
+cmd  25:: read(47) -> r
+cmd  26:: trim(47) -> success
+cmd  27:: write(73, x) -> success
+cmd  28:: read(8) -> q
+cmd  29:: write(67, T) -> success
+cmd  30:: write(75, z) -> success
+cmd  31:: write(52, Z) -> success
+cmd  32:: trim(30) -> success
+cmd  33:: read(31) -> P
+cmd  34:: write(67, f) -> success
+cmd  35:: write(9, d) -> success
+cmd  36:: write(26, O) -> success
+cmd  37:: read(74) -> 6
+cmd  38:: read(9) -> d
+cmd  39:: write(54, 1) -> success
+cmd  40:: write(48, z) -> success
+cmd  41:: read(48) -> z
+cmd  42:: read(48) -> z
+cmd  43:: read(8) -> q
+cmd  44:: write(74, 1) -> success
+cmd  45:: write(8, g) -> success
+cmd  46:: read(43) -> X
+cmd  47:: read(60) -> q
+cmd  48:: read(8) -> g
+cmd  49:: read(9) -> d
+cmd  50:: trim(71) -> success
+cmd  51:: write(77, 3) -> success
+cmd  52:: write(67, l) -> success
+cmd  53:: read(19) -> k
+cmd  54:: read(19) -> k
+cmd  55:: write(40, j) -> success
+cmd  56:: read(69) -> g
+cmd  57:: write(0, J) -> success
+cmd  58:: read(43) -> X
+cmd  59:: read(0) -> J
+cmd  60:: read(77) -> 3
+cmd  61:: write(49, I) -> success
+cmd  62:: read(67) -> l
+cmd  63:: read(0) -> J
+cmd  64:: read(19) -> k
+cmd  65:: write(45, p) -> success
+cmd  66:: write(56, p) -> success
+cmd  67:: write(3, r) -> success
+cmd  68:: read(56) -> p
+cmd  69:: write(44, K) -> success
+cmd  70:: write(39, j) -> success
+cmd  71:: write(64, S) -> success
+cmd  72:: write(15, Z) -> success
+cmd  73:: write(6, I) -> success
+cmd  74:: trim(6) -> success
+cmd  75:: write(25, d) -> success
+cmd  76:: write(0, P) -> success
+cmd  77:: write(7, 7) -> success
+cmd  78:: write(69, h) -> success
+cmd  79:: trim(8) -> success
+cmd  80:: write(31, 5) -> success
+cmd  81:: read(45) -> p
+cmd  82:: write(10, w) -> success
+cmd  83:: write(27, S) -> success
+cmd  84:: read(46) -> U
+cmd  85:: write(44, W) -> success
+cmd  86:: trim(7) -> success
+cmd  87:: read(49) -> I
+cmd  88:: write(56, T) -> success
+cmd  89:: write(29, x) -> success
+cmd  90:: read(60) -> q
+cmd  91:: read(44) -> W
+cmd  92:: write(27, C) -> success
+cmd  93:: read(29) -> x
+cmd  94:: read(54) -> 1
+cmd  95:: read(0) -> P
+cmd  96:: read(26) -> O
+cmd  97:: read(74) -> 1
+cmd  98:: write(7, U) -> success
+cmd  99:: write(67, Y) -> success
+cmd 100:: read(45) -> p
+cmd 101:: write(24, J) -> success
+cmd 102:: write(73, C) -> success
+cmd 103:: read(49) -> I
+cmd 104:: read(44) -> W
+cmd 105:: read(52) -> Z
+cmd 106:: write(35, u) -> success
+cmd 107:: write(54, q) -> success
+cmd 108:: read(19) -> k
+cmd 109:: write(34, m) -> success
+cmd 110:: read(44) -> W
+cmd 111:: trim(9) -> success
+cmd 112:: write(9, o) -> success
+cmd 113:: read(34) -> m
+cmd 114:: read(31) -> 5
+cmd 115:: read(43) -> X
+cmd 116:: trim(9) -> success
+cmd 117:: read(44) -> W
+cmd 118:: write(39, U) -> success
+cmd 119:: read(54) -> q
+cmd 120:: write(16, B) -> success
+cmd 121:: read(34) -> m
+cmd 122:: write(65, 2) -> success
+cmd 123:: read(27) -> C
+cmd 124:: write(46, I) -> success
+cmd 125:: write(5, 5) -> success
+cmd 126:: write(3, d) -> success
+cmd 127:: read(24) -> J
+cmd 128:: read(43) -> X
+cmd 129:: write(77, v) -> success
+cmd 130:: trim(77) -> success
+cmd 131:: write(54, N) -> success
+cmd 132:: write(79, K) -> success
+cmd 133:: trim(0) -> success
+cmd 134:: write(47, P) -> success
+cmd 135:: write(63, o) -> success
+cmd 136:: write(68, N) -> success
+cmd 137:: write(0, b) -> success
+cmd 138:: write(20, 4) -> success
+cmd 139:: write(75, i) -> success
+cmd 140:: write(64, 3) -> success
+cmd 141:: write(10, h) -> success
+cmd 142:: write(4, 2) -> success
+cmd 143:: write(39, R) -> success
+cmd 144:: write(53, 9) -> success
+cmd 145:: trim(40) -> success
+cmd 146:: write(30, 2) -> success
+cmd 147:: write(12, 2) -> success
+cmd 148:: write(50, 6) -> success
+cmd 149:: write(27, n) -> success
+cmd 150:: write(39, S) -> success
+cmd 151:: write(37, D) -> success
+cmd 152:: read(16) -> B
+cmd 153:: write(63, 7) -> success
+gc 0:: read(physical_page=0)
+gc 0:: write()
+gc 0:: read(physical_page=3)
+gc 0:: write()
+gc 0:: erase(block=0)
+gc 0:: read(physical_page=12)
+gc 0:: write()
+gc 0:: read(physical_page=17)
+gc 0:: write()
+gc 0:: erase(block=1)
+cmd 154:: trim(63) -> success
+cmd 155:: trim(4) -> success
+cmd 156:: write(64, w) -> success
+cmd 157:: write(15, M) -> success
+cmd 158:: write(60, s) -> success
+cmd 159:: write(6, 2) -> success
+cmd 160:: trim(39) -> success
+cmd 161:: trim(50) -> success
+cmd 162:: write(45, d) -> success
+cmd 163:: read(53) -> 9
+cmd 164:: write(55, q) -> success
+cmd 165:: read(45) -> d
+cmd 166:: write(73, W) -> success
+cmd 167:: write(7, L) -> success
+cmd 168:: write(2, r) -> success
+cmd 169:: write(58, X) -> success
+cmd 170:: write(4, m) -> success
+cmd 171:: read(60) -> s
+cmd 172:: trim(53) -> success
+cmd 173:: read(74) -> 1
+cmd 174:: read(2) -> r
+cmd 175:: read(48) -> z
+cmd 176:: read(12) -> 2
+cmd 177:: read(54) -> N
+cmd 178:: trim(43) -> success
+cmd 179:: trim(49) -> success
+cmd 180:: write(74, X) -> success
+cmd 181:: write(63, 6) -> success
+cmd 182:: write(57, W) -> success
+cmd 183:: write(19, K) -> success
+cmd 184:: read(22) -> K
+cmd 185:: read(73) -> W
+cmd 186:: read(24) -> J
+cmd 187:: write(27, D) -> success
+gc 1:: read(physical_page=24)
+gc 1:: write()
+gc 1:: read(physical_page=27)
+gc 1:: write()
+gc 1:: read(physical_page=29)
+gc 1:: write()
+gc 1:: erase(block=2)
+gc 1:: erase(block=3)
+cmd 188:: read(45) -> d
+cmd 189:: trim(22) -> success
+cmd 190:: write(58, j) -> success
+cmd 191:: read(27) -> D
+cmd 192:: trim(30) -> success
+cmd 193:: read(79) -> K
+cmd 194:: write(31, L) -> success
+cmd 195:: write(36, W) -> success
+cmd 196:: read(65) -> 2
+cmd 197:: write(0, H) -> success
+cmd 198:: write(19, L) -> success
+cmd 199:: write(12, H) -> success
+cmd 200:: write(60, e) -> success
+cmd 201:: write(78, 7) -> success
+cmd 202:: write(16, w) -> success
+cmd 203:: write(8, f) -> success
+cmd 204:: read(63) -> 6
+cmd 205:: write(50, i) -> success
+cmd 206:: read(75) -> i
+cmd 207:: trim(74) -> success
+cmd 208:: write(41, z) -> success
+cmd 209:: write(32, D) -> success
+cmd 210:: write(63, i) -> success
+cmd 211:: read(56) -> T
+cmd 212:: write(47, 8) -> success
+cmd 213:: write(37, p) -> success
+cmd 214:: write(25, E) -> success
+gc 2:: read(physical_page=48)
+gc 2:: write()
+gc 2:: erase(block=4)
+gc 2:: read(physical_page=52)
+gc 2:: write()
+gc 2:: read(physical_page=53)
+gc 2:: write()
+gc 2:: read(physical_page=54)
+gc 2:: write()
+gc 2:: read(physical_page=57)
+gc 2:: write()
+gc 2:: read(physical_page=58)
+gc 2:: write()
+gc 2:: erase(block=5)
+cmd 215:: read(6) -> 2
+cmd 216:: read(46) -> I
+cmd 217:: write(0, w) -> success
+cmd 218:: read(20) -> 4
+cmd 219:: write(0, 2) -> success
+cmd 220:: write(69, H) -> success
+cmd 221:: write(60, h) -> success
+cmd 222:: read(44) -> W
+cmd 223:: read(36) -> W
+cmd 224:: write(56, w) -> success
+cmd 225:: read(29) -> x
+cmd 226:: write(64, o) -> success
+cmd 227:: read(50) -> i
+cmd 228:: write(24, e) -> success
+cmd 229:: read(73) -> W
+cmd 230:: write(39, B) -> success
+cmd 231:: write(22, S) -> success
+cmd 232:: read(0) -> 2
+cmd 233:: write(76, V) -> success
+cmd 234:: trim(47) -> success
+cmd 235:: write(17, g) -> success
+cmd 236:: read(60) -> h
+cmd 237:: write(50, G) -> success
+cmd 238:: trim(27) -> success
+cmd 239:: trim(35) -> success
+cmd 240:: read(41) -> z
+cmd 241:: write(36, k) -> success
+cmd 242:: read(25) -> E
+cmd 243:: read(67) -> Y
+cmd 244:: read(58) -> j
+cmd 245:: read(54) -> N
+cmd 246:: read(73) -> W
+cmd 247:: trim(69) -> success
+cmd 248:: write(3, O) -> success
+gc 3:: read(physical_page=62)
+gc 3:: write()
+gc 3:: read(physical_page=66)
+gc 3:: write()
+gc 3:: read(physical_page=67)
+gc 3:: write()
+gc 3:: read(physical_page=68)
+gc 3:: write()
+gc 3:: erase(block=6)
+gc 3:: read(physical_page=71)
+gc 3:: write()
+gc 3:: read(physical_page=72)
+gc 3:: write()
+gc 3:: read(physical_page=75)
+gc 3:: write()
+gc 3:: read(physical_page=77)
+gc 3:: write()
+gc 3:: read(physical_page=78)
+gc 3:: write()
+gc 3:: erase(block=7)
+cmd 249:: trim(34) -> success
+cmd 250:: read(19) -> L
+cmd 251:: write(73, r) -> success
+cmd 252:: read(63) -> i
+cmd 253:: write(11, u) -> success
+cmd 254:: read(22) -> S
+cmd 255:: read(0) -> 2
+cmd 256:: read(75) -> i
+cmd 257:: read(12) -> H
+cmd 258:: write(18, 7) -> success
+cmd 259:: write(46, f) -> success
+cmd 260:: read(55) -> q
+cmd 261:: write(68, 7) -> success
+cmd 262:: write(47, m) -> success
+cmd 263:: write(52, d) -> success
+cmd 264:: write(41, F) -> success
+cmd 265:: read(3) -> O
+cmd 266:: read(20) -> 4
+cmd 267:: read(46) -> f
+cmd 268:: read(18) -> 7
+cmd 269:: write(48, M) -> success
+cmd 270:: write(55, d) -> success
+cmd 271:: write(60, l) -> success
+gc 4:: read(physical_page=80)
+gc 4:: write()
+gc 4:: erase(block=8)
+gc 4:: read(physical_page=96)
+gc 4:: write()
+gc 4:: read(physical_page=98)
+gc 4:: write()
+gc 4:: read(physical_page=99)
+gc 4:: write()
+gc 4:: erase(block=9)
+cmd 272:: write(72, 6) -> success
+cmd 273:: write(28, s) -> success
+cmd 274:: read(58) -> j
+cmd 275:: write(76, t) -> success
+cmd 276:: read(45) -> d
+cmd 277:: write(65, M) -> success
+cmd 278:: read(73) -> r
+cmd 279:: write(27, r) -> success
+cmd 280:: write(20, F) -> success
+cmd 281:: read(12) -> H
+cmd 282:: write(1, C) -> success
+cmd 283:: read(48) -> M
+cmd 284:: write(3, Y) -> success
+cmd 285:: write(17, q) -> success
+cmd 286:: read(10) -> h
+cmd 287:: trim(50) -> success
+cmd 288:: read(3) -> Y
+cmd 289:: write(54, s) -> success
+cmd 290:: read(16) -> w
+cmd 291:: read(52) -> d
+cmd 292:: write(58, 9) -> success
+cmd 293:: read(22) -> S
+cmd 294:: read(39) -> B
+cmd 295:: read(63) -> i
+cmd 296:: read(72) -> 6
+cmd 297:: write(36, 9) -> success
+cmd 298:: write(64, J) -> success
+cmd 299:: read(46) -> f
+cmd 300:: read(67) -> Y
+cmd 301:: read(78) -> 7
+cmd 302:: write(39, o) -> success
+cmd 303:: read(12) -> H
+cmd 304:: trim(41) -> success
+cmd 305:: write(54, s) -> success
+cmd 306:: write(39, 1) -> success
+gc 5:: read(physical_page=102)
+gc 5:: write()
+gc 5:: read(physical_page=103)
+gc 5:: write()
+gc 5:: read(physical_page=105)
+gc 5:: write()
+gc 5:: read(physical_page=108)
+gc 5:: write()
+gc 5:: erase(block=10)
+gc 5:: read(physical_page=112)
+gc 5:: write()
+gc 5:: read(physical_page=115)
+gc 5:: write()
+gc 5:: read(physical_page=118)
+gc 5:: write()
+gc 5:: read(physical_page=119)
+gc 5:: write()
+gc 5:: erase(block=11)
+cmd 307:: write(43, A) -> success
+cmd 308:: write(54, c) -> success
+cmd 309:: write(78, Y) -> success
+cmd 310:: read(25) -> E
+cmd 311:: trim(72) -> success
+cmd 312:: write(54, l) -> success
+cmd 313:: trim(18) -> success
+cmd 314:: read(60) -> l
+cmd 315:: write(76, m) -> success
+cmd 316:: write(62, B) -> success
+cmd 317:: trim(60) -> success
+cmd 318:: read(52) -> d
+cmd 319:: trim(1) -> success
+cmd 320:: write(65, M) -> success
+cmd 321:: write(35, q) -> success
+cmd 322:: trim(26) -> success
+cmd 323:: read(75) -> i
+cmd 324:: read(39) -> 1
+cmd 325:: write(21, h) -> success
+cmd 326:: write(57, W) -> success
+cmd 327:: write(79, b) -> success
+cmd 328:: write(67, K) -> success
+gc 6:: read(physical_page=2)
+gc 6:: write()
+gc 6:: read(physical_page=3)
+gc 6:: write()
+gc 6:: read(physical_page=6)
+gc 6:: write()
+gc 6:: read(physical_page=7)
+gc 6:: write()
+gc 6:: read(physical_page=9)
+gc 6:: write()
+gc 6:: erase(block=0)
+gc 6:: read(physical_page=10)
+gc 6:: write()
+gc 6:: read(physical_page=12)
+gc 6:: write()
+gc 6:: read(physical_page=14)
+gc 6:: write()
+gc 6:: read(physical_page=18)
+gc 6:: write()
+gc 6:: erase(block=1)
+cmd 329:: read(43) -> A
+cmd 330:: write(75, y) -> success
+cmd 331:: write(64, e) -> success
+cmd 332:: read(43) -> A
+cmd 333:: write(50, u) -> success
+cmd 334:: write(71, h) -> success
+cmd 335:: trim(35) -> success
+cmd 336:: read(32) -> D
+cmd 337:: write(64, H) -> success
+cmd 338:: trim(75) -> success
+cmd 339:: trim(62) -> success
+cmd 340:: write(20, S) -> success
+cmd 341:: write(7, 1) -> success
+cmd 342:: read(32) -> D
+cmd 343:: read(58) -> 9
+cmd 344:: read(73) -> r
+cmd 345:: write(10, I) -> success
+cmd 346:: read(0) -> 2
+cmd 347:: write(36, l) -> success
+cmd 348:: read(56) -> w
+cmd 349:: write(59, Q) -> success
+cmd 350:: trim(29) -> success
+cmd 351:: trim(59) -> success
+cmd 352:: write(53, A) -> success
+gc 7:: read(physical_page=21)
+gc 7:: write()
+gc 7:: read(physical_page=23)
+gc 7:: write()
+gc 7:: read(physical_page=25)
+gc 7:: write()
+gc 7:: erase(block=2)
+gc 7:: read(physical_page=34)
+gc 7:: write()
+gc 7:: erase(block=3)
+cmd 353:: write(4, 7) -> success
+cmd 354:: read(63) -> i
+cmd 355:: write(52, 2) -> success
+cmd 356:: write(50, W) -> success
+cmd 357:: read(15) -> M
+cmd 358:: write(16, g) -> success
+cmd 359:: write(20, W) -> success
+cmd 360:: trim(67) -> success
+cmd 361:: trim(55) -> success
+cmd 362:: read(57) -> W
+cmd 363:: read(11) -> u
+cmd 364:: read(0) -> 2
+cmd 365:: read(54) -> l
+cmd 366:: read(20) -> W
+cmd 367:: write(65, l) -> success
+cmd 368:: write(27, l) -> success
+cmd 369:: write(40, Z) -> success
+cmd 370:: write(20, 1) -> success
+cmd 371:: write(56, b) -> success
+cmd 372:: write(19, o) -> success
+cmd 373:: read(32) -> D
+cmd 374:: read(19) -> o
+cmd 375:: read(21) -> h
+cmd 376:: write(45, N) -> success
+cmd 377:: write(51, b) -> success
+cmd 378:: read(52) -> 2
+cmd 379:: read(57) -> W
+cmd 380:: write(29, y) -> success
+cmd 381:: write(6, 3) -> success
+cmd 382:: write(68, g) -> success
+gc 8:: read(physical_page=40)
+gc 8:: write()
+gc 8:: read(physical_page=41)
+gc 8:: write()
+gc 8:: read(physical_page=43)
+gc 8:: write()
+gc 8:: read(physical_page=45)
+gc 8:: write()
+gc 8:: read(physical_page=48)
+gc 8:: write()
+gc 8:: erase(block=4)
+gc 8:: read(physical_page=52)
+gc 8:: write()
+gc 8:: read(physical_page=56)
+gc 8:: write()
+gc 8:: erase(block=5)
+cmd 383:: write(52, k) -> success
+cmd 384:: trim(12) -> success
+cmd 385:: read(36) -> l
+cmd 386:: read(5) -> 5
+cmd 387:: read(54) -> l
+cmd 388:: read(78) -> Y
+cmd 389:: read(36) -> l
+cmd 390:: trim(37) -> success
+cmd 391:: write(3, e) -> success
+cmd 392:: read(44) -> W
+cmd 393:: read(20) -> 1
+cmd 394:: write(36, 0) -> success
+cmd 395:: trim(46) -> success
+cmd 396:: read(29) -> y
+cmd 397:: read(2) -> r
+cmd 398:: read(52) -> k
+cmd 399:: write(53, n) -> success
+cmd 400:: read(71) -> h
+cmd 401:: read(54) -> l
+cmd 402:: write(5, p) -> success
+cmd 403:: write(34, r) -> success
+cmd 404:: write(31, E) -> success
+cmd 405:: read(43) -> A
+cmd 406:: trim(71) -> success
+cmd 407:: read(36) -> 0
+cmd 408:: write(3, j) -> success
+cmd 409:: write(8, S) -> success
+cmd 410:: read(31) -> E
+cmd 411:: write(31, V) -> success
+cmd 412:: write(12, l) -> success
+cmd 413:: write(79, h) -> success
+cmd 414:: write(27, C) -> success
+gc 9:: read(physical_page=63)
+gc 9:: write()
+gc 9:: read(physical_page=65)
+gc 9:: write()
+gc 9:: erase(block=6)
+gc 9:: read(physical_page=70)
+gc 9:: write()
+gc 9:: read(physical_page=72)
+gc 9:: write()
+gc 9:: read(physical_page=79)
+gc 9:: write()
+gc 9:: erase(block=7)
+cmd 415:: write(60, c) -> success
+cmd 416:: trim(3) -> success
+cmd 417:: write(50, i) -> success
+cmd 418:: write(21, J) -> success
+cmd 419:: read(8) -> S
+cmd 420:: read(68) -> g
+cmd 421:: read(76) -> m
+cmd 422:: write(44, a) -> success
+cmd 423:: read(63) -> i
+cmd 424:: write(70, J) -> success
+cmd 425:: write(9, X) -> success
+cmd 426:: write(69, T) -> success
+cmd 427:: read(5) -> p
+cmd 428:: write(78, K) -> success
+cmd 429:: read(69) -> T
+cmd 430:: read(57) -> W
+cmd 431:: trim(69) -> success
+cmd 432:: write(12, 0) -> success
+cmd 433:: write(74, w) -> success
+cmd 434:: write(16, D) -> success
+cmd 435:: trim(52) -> success
+cmd 436:: write(30, N) -> success
+cmd 437:: read(40) -> Z
+cmd 438:: write(28, A) -> success
+cmd 439:: read(50) -> i
+cmd 440:: trim(8) -> success
+cmd 441:: write(54, V) -> success
+cmd 442:: read(29) -> y
+cmd 443:: write(48, c) -> success
+gc 10:: read(physical_page=83)
+gc 10:: write()
+gc 10:: read(physical_page=88)
+gc 10:: write()
+gc 10:: erase(block=8)
+gc 10:: read(physical_page=93)
+gc 10:: write()
+gc 10:: read(physical_page=94)
+gc 10:: write()
+gc 10:: read(physical_page=96)
+gc 10:: write()
+gc 10:: read(physical_page=99)
+gc 10:: write()
+gc 10:: erase(block=9)
+cmd 444:: write(1, 8) -> success
+cmd 445:: read(32) -> D
+cmd 446:: trim(9) -> success
+cmd 447:: read(79) -> h
+cmd 448:: write(38, 6) -> success
+cmd 449:: write(51, t) -> success
+cmd 450:: read(44) -> a
+cmd 451:: write(11, 4) -> success
+cmd 452:: read(30) -> N
+cmd 453:: write(18, 6) -> success
+cmd 454:: read(45) -> N
+cmd 455:: write(10, y) -> success
+cmd 456:: read(39) -> 1
+cmd 457:: write(55, V) -> success
+cmd 458:: write(27, 6) -> success
+cmd 459:: read(12) -> 0
+cmd 460:: read(36) -> 0
+cmd 461:: trim(36) -> success
+cmd 462:: read(22) -> S
+cmd 463:: read(20) -> 1
+cmd 464:: write(74, K) -> success
+cmd 465:: write(28, n) -> success
+cmd 466:: read(6) -> 3
+cmd 467:: write(52, n) -> success
+cmd 468:: trim(58) -> success
+cmd 469:: read(51) -> t
+cmd 470:: trim(70) -> success
+cmd 471:: write(35, l) -> success
+cmd 472:: read(55) -> V
+cmd 473:: write(24, o) -> success
+cmd 474:: write(78, z) -> success
+gc 11:: read(physical_page=104)
+gc 11:: write()
+gc 11:: read(physical_page=106)
+gc 11:: write()
+gc 11:: erase(block=10)
+gc 11:: read(physical_page=113)
+gc 11:: write()
+gc 11:: read(physical_page=115)
+gc 11:: write()
+gc 11:: erase(block=11)
+cmd 475:: write(40, u) -> success
+cmd 476:: read(56) -> b
+cmd 477:: read(7) -> 1
+cmd 478:: trim(35) -> success
+cmd 479:: write(5, c) -> success
+cmd 480:: read(29) -> y
+cmd 481:: read(19) -> o
+cmd 482:: read(48) -> c
+cmd 483:: write(15, J) -> success
+cmd 484:: read(30) -> N
+cmd 485:: write(11, e) -> success
+cmd 486:: trim(20) -> success
+cmd 487:: write(30, L) -> success
+cmd 488:: write(46, H) -> success
+cmd 489:: write(51, A) -> success
+cmd 490:: read(50) -> i
+cmd 491:: read(47) -> m
+cmd 492:: write(45, E) -> success
+cmd 493:: read(48) -> c
+cmd 494:: read(48) -> c
+cmd 495:: write(36, l) -> success
+cmd 496:: write(45, k) -> success
+cmd 497:: write(19, t) -> success
+cmd 498:: trim(31) -> success
+cmd 499:: write(25, L) -> success
+cmd 500:: write(20, t) -> success
+cmd 501:: read(21) -> J
+cmd 502:: write(77, w) -> success
+cmd 503:: read(76) -> m
+cmd 504:: write(12, 2) -> success
+cmd 505:: write(61, t) -> success
+gc 12:: read(physical_page=0)
+gc 12:: write()
+gc 12:: read(physical_page=4)
+gc 12:: write()
+gc 12:: read(physical_page=8)
+gc 12:: write()
+gc 12:: read(physical_page=9)
+gc 12:: write()
+gc 12:: erase(block=0)
+gc 12:: read(physical_page=10)
+gc 12:: write()
+gc 12:: read(physical_page=11)
+gc 12:: write()
+gc 12:: read(physical_page=14)
+gc 12:: write()
+gc 12:: erase(block=1)
+cmd 506:: write(15, o) -> success
+cmd 507:: write(76, T) -> success
+cmd 508:: write(57, b) -> success
+cmd 509:: trim(51) -> success
+cmd 510:: write(50, C) -> success
+cmd 511:: write(17, r) -> success
+cmd 512:: read(38) -> 6
+cmd 513:: write(2, 8) -> success
+cmd 514:: write(17, G) -> success
+cmd 515:: write(34, E) -> success
+cmd 516:: trim(55) -> success
+cmd 517:: read(64) -> H
+cmd 518:: write(35, r) -> success
+cmd 519:: write(37, 9) -> success
+cmd 520:: write(76, o) -> success
+cmd 521:: write(71, H) -> success
+cmd 522:: read(52) -> n
+cmd 523:: write(32, d) -> success
+gc 13:: read(physical_page=21)
+gc 13:: write()
+gc 13:: read(physical_page=29)
+gc 13:: write()
+gc 13:: erase(block=2)
+gc 13:: read(physical_page=33)
+gc 13:: write()
+gc 13:: read(physical_page=35)
+gc 13:: write()
+gc 13:: read(physical_page=36)
+gc 13:: write()
+gc 13:: read(physical_page=38)
+gc 13:: write()
+gc 13:: read(physical_page=39)
+gc 13:: write()
+gc 13:: erase(block=3)
+cmd 524:: read(44) -> a
+cmd 525:: write(30, x) -> success
+cmd 526:: read(76) -> o
+cmd 527:: read(74) -> K
+cmd 528:: read(74) -> K
+cmd 529:: read(19) -> t
+cmd 530:: write(12, g) -> success
+cmd 531:: write(67, d) -> success
+cmd 532:: read(6) -> 3
+cmd 533:: write(7, 9) -> success
+cmd 534:: write(5, Z) -> success
+cmd 535:: write(58, 1) -> success
+cmd 536:: write(76, L) -> success
+cmd 537:: write(27, 1) -> success
+cmd 538:: read(2) -> 8
+cmd 539:: read(7) -> 9
+cmd 540:: write(27, y) -> success
+cmd 541:: read(19) -> t
+cmd 542:: write(27, Z) -> success
+cmd 543:: write(63, 4) -> success
+cmd 544:: write(68, A) -> success
+cmd 545:: write(62, l) -> success
+gc 14:: read(physical_page=46)
+gc 14:: write()
+gc 14:: read(physical_page=49)
+gc 14:: write()
+gc 14:: erase(block=4)
+gc 14:: read(physical_page=50)
+gc 14:: write()
+gc 14:: read(physical_page=56)
+gc 14:: write()
+gc 14:: read(physical_page=57)
+gc 14:: write()
+gc 14:: read(physical_page=58)
+gc 14:: write()
+gc 14:: erase(block=5)
+cmd 546:: write(79, H) -> success
+cmd 547:: trim(57) -> success
+cmd 548:: write(27, g) -> success
+cmd 549:: trim(2) -> success
+cmd 550:: trim(20) -> success
+cmd 551:: read(62) -> l
+cmd 552:: read(1) -> 8
+cmd 553:: read(68) -> A
+cmd 554:: write(2, B) -> success
+cmd 555:: read(74) -> K
+cmd 556:: trim(47) -> success
+cmd 557:: read(32) -> d
+cmd 558:: write(6, Y) -> success
+cmd 559:: trim(25) -> success
+cmd 560:: read(74) -> K
+cmd 561:: read(29) -> y
+cmd 562:: read(12) -> g
+cmd 563:: read(62) -> l
+cmd 564:: read(77) -> w
+cmd 565:: write(38, M) -> success
+cmd 566:: write(20, j) -> success
+cmd 567:: write(35, 7) -> success
+cmd 568:: read(65) -> l
+cmd 569:: write(19, j) -> success
+cmd 570:: write(76, 0) -> success
+cmd 571:: write(9, f) -> success
+cmd 572:: read(11) -> e
+cmd 573:: trim(56) -> success
+cmd 574:: write(28, f) -> success
+cmd 575:: read(10) -> y
+cmd 576:: write(2, e) -> success
+cmd 577:: write(70, W) -> success
+cmd 578:: read(67) -> d
+cmd 579:: write(15, Z) -> success
+gc 15:: read(physical_page=61)
+gc 15:: write()
+gc 15:: read(physical_page=62)
+gc 15:: write()
+gc 15:: read(physical_page=65)
+gc 15:: write()
+gc 15:: read(physical_page=67)
+gc 15:: write()
+gc 15:: read(physical_page=69)
+gc 15:: write()
+gc 15:: erase(block=6)
+gc 15:: read(physical_page=70)
+gc 15:: write()
+gc 15:: read(physical_page=71)
+gc 15:: write()
+gc 15:: read(physical_page=73)
+gc 15:: write()
+gc 15:: read(physical_page=74)
+gc 15:: write()
+gc 15:: read(physical_page=75)
+gc 15:: write()
+gc 15:: read(physical_page=78)
+gc 15:: write()
+gc 15:: erase(block=7)
+gc 15:: read(physical_page=80)
+gc 15:: write()
+gc 15:: read(physical_page=83)
+gc 15:: write()
+gc 15:: read(physical_page=84)
+gc 15:: write()
+gc 15:: read(physical_page=88)
+gc 15:: write()
+gc 15:: erase(block=8)
+cmd 580:: read(77) -> w
+cmd 581:: write(63, Q) -> success
+cmd 582:: read(43) -> A
+cmd 583:: read(27) -> g
+cmd 584:: read(73) -> r
+cmd 585:: write(61, Y) -> success
+cmd 586:: write(22, p) -> success
+cmd 587:: read(18) -> 6
+cmd 588:: write(15, d) -> success
+cmd 589:: read(43) -> A
+cmd 590:: read(11) -> e
+cmd 591:: write(10, C) -> success
+cmd 592:: write(9, F) -> success
+cmd 593:: read(43) -> A
+cmd 594:: write(30, J) -> success
+cmd 595:: write(25, t) -> success
+cmd 596:: write(23, O) -> success
+cmd 597:: trim(78) -> success
+cmd 598:: write(46, H) -> success
+cmd 599:: write(60, Q) -> success
+cmd 600:: read(50) -> C
+cmd 601:: write(41, T) -> success
+cmd 602:: write(66, t) -> success
+cmd 603:: read(27) -> g
+cmd 604:: write(46, Y) -> success
+cmd 605:: write(12, 6) -> success
+gc 16:: read(physical_page=91)
+gc 16:: write()
+gc 16:: read(physical_page=93)
+gc 16:: write()
+gc 16:: read(physical_page=96)
+gc 16:: write()
+gc 16:: erase(block=9)
+gc 16:: read(physical_page=101)
+gc 16:: write()
+gc 16:: read(physical_page=104)
+gc 16:: write()
+gc 16:: read(physical_page=105)
+gc 16:: write()
+gc 16:: read(physical_page=107)
+gc 16:: write()
+gc 16:: read(physical_page=109)
+gc 16:: write()
+gc 16:: erase(block=10)
+cmd 606:: read(73) -> r
+cmd 607:: write(14, a) -> success
+cmd 608:: trim(22) -> success
+cmd 609:: write(63, 1) -> success
+cmd 610:: write(66, j) -> success
+cmd 611:: write(39, m) -> success
+cmd 612:: read(37) -> 9
+cmd 613:: write(1, w) -> success
+cmd 614:: read(25) -> t
+cmd 615:: read(24) -> o
+cmd 616:: write(40, A) -> success
+cmd 617:: trim(2) -> success
+cmd 618:: trim(54) -> success
+cmd 619:: write(41, V) -> success
+cmd 620:: write(26, U) -> success
+cmd 621:: trim(1) -> success
+cmd 622:: write(11, Y) -> success
+cmd 623:: write(78, B) -> success
+cmd 624:: read(45) -> k
+cmd 625:: write(6, g) -> success
+cmd 626:: write(33, 9) -> success
+gc 17:: read(physical_page=110)
+gc 17:: write()
+gc 17:: read(physical_page=111)
+gc 17:: write()
+gc 17:: read(physical_page=114)
+gc 17:: write()
+gc 17:: read(physical_page=116)
+gc 17:: write()
+gc 17:: read(physical_page=117)
+gc 17:: write()
+gc 17:: erase(block=11)
+gc 17:: read(physical_page=0)
+gc 17:: write()
+gc 17:: read(physical_page=1)
+gc 17:: write()
+gc 17:: read(physical_page=2)
+gc 17:: write()
+gc 17:: read(physical_page=3)
+gc 17:: write()
+gc 17:: read(physical_page=9)
+gc 17:: write()
+gc 17:: erase(block=0)
+gc 17:: read(physical_page=10)
+gc 17:: write()
+gc 17:: read(physical_page=11)
+gc 17:: write()
+gc 17:: read(physical_page=13)
+gc 17:: write()
+gc 17:: read(physical_page=14)
+gc 17:: write()
+gc 17:: read(physical_page=17)
+gc 17:: write()
+gc 17:: read(physical_page=18)
+gc 17:: write()
+gc 17:: erase(block=1)
+cmd 627:: trim(71) -> success
+cmd 628:: write(61, 6) -> success
+cmd 629:: write(59, t) -> success
+cmd 630:: write(48, g) -> success
+cmd 631:: write(40, x) -> success
+cmd 632:: read(73) -> r
+cmd 633:: write(7, n) -> success
+cmd 634:: trim(41) -> success
+cmd 635:: read(44) -> a
+cmd 636:: read(59) -> t
+cmd 637:: read(14) -> a
+cmd 638:: read(11) -> Y
+cmd 639:: write(32, T) -> success
+cmd 640:: trim(59) -> success
+cmd 641:: read(70) -> W
+cmd 642:: read(10) -> C
+cmd 643:: read(20) -> j
+cmd 644:: write(20, o) -> success
+cmd 645:: read(48) -> g
+cmd 646:: write(0, h) -> success
+cmd 647:: write(40, W) -> success
+cmd 648:: read(61) -> 6
+cmd 649:: read(60) -> Q
+cmd 650:: read(68) -> A
+cmd 651:: read(29) -> y
+cmd 652:: read(17) -> G
+cmd 653:: write(34, 4) -> success
+cmd 654:: read(62) -> l
+cmd 655:: write(4, 9) -> success
+cmd 656:: read(52) -> n
+cmd 657:: write(28, F) -> success
+cmd 658:: write(65, K) -> success
+cmd 659:: trim(21) -> success
+cmd 660:: read(15) -> d
+cmd 661:: read(32) -> T
+cmd 662:: write(6, 6) -> success
+gc 18:: read(physical_page=21)
+gc 18:: write()
+gc 18:: read(physical_page=23)
+gc 18:: write()
+gc 18:: read(physical_page=24)
+gc 18:: write()
+gc 18:: read(physical_page=25)
+gc 18:: write()
+gc 18:: read(physical_page=29)
+gc 18:: write()
+gc 18:: erase(block=2)
+gc 18:: read(physical_page=31)
+gc 18:: write()
+gc 18:: read(physical_page=33)
+gc 18:: write()
+gc 18:: read(physical_page=34)
+gc 18:: write()
+gc 18:: read(physical_page=35)
+gc 18:: write()
+gc 18:: read(physical_page=37)
+gc 18:: write()
+gc 18:: erase(block=3)
+gc 18:: read(physical_page=43)
+gc 18:: write()
+gc 18:: read(physical_page=44)
+gc 18:: write()
+gc 18:: read(physical_page=45)
+gc 18:: write()
+gc 18:: read(physical_page=49)
+gc 18:: write()
+gc 18:: erase(block=4)
+cmd 663:: write(43, w) -> success
+cmd 664:: read(39) -> m
+cmd 665:: trim(16) -> success
+cmd 666:: read(66) -> j
+cmd 667:: trim(73) -> success
+cmd 668:: write(52, K) -> success
+cmd 669:: write(67, M) -> success
+cmd 670:: read(35) -> 7
+cmd 671:: write(13, n) -> success
+cmd 672:: read(40) -> W
+cmd 673:: trim(61) -> success
+cmd 674:: trim(30) -> success
+cmd 675:: trim(65) -> success
+cmd 676:: write(78, z) -> success
+cmd 677:: write(40, o) -> success
+cmd 678:: read(68) -> A
+cmd 679:: trim(34) -> success
+cmd 680:: write(75, e) -> success
+cmd 681:: read(39) -> m
+cmd 682:: read(60) -> Q
+cmd 683:: write(9, V) -> success
+cmd 684:: write(48, B) -> success
+cmd 685:: write(31, d) -> success
+cmd 686:: read(17) -> G
+cmd 687:: write(3, X) -> success
+cmd 688:: write(35, 5) -> success
+cmd 689:: write(33, j) -> success
+cmd 690:: write(69, n) -> success
+cmd 691:: write(3, Y) -> success
+cmd 692:: write(44, j) -> success
+gc 19:: read(physical_page=50)
+gc 19:: write()
+gc 19:: read(physical_page=53)
+gc 19:: write()
+gc 19:: read(physical_page=54)
+gc 19:: write()
+gc 19:: read(physical_page=56)
+gc 19:: write()
+gc 19:: read(physical_page=59)
+gc 19:: write()
+gc 19:: erase(block=5)
+gc 19:: read(physical_page=60)
+gc 19:: write()
+gc 19:: read(physical_page=62)
+gc 19:: write()
+gc 19:: read(physical_page=64)
+gc 19:: write()
+gc 19:: read(physical_page=65)
+gc 19:: write()
+gc 19:: read(physical_page=67)
+gc 19:: write()
+gc 19:: read(physical_page=69)
+gc 19:: write()
+gc 19:: erase(block=6)
+gc 19:: read(physical_page=70)
+gc 19:: write()
+gc 19:: read(physical_page=71)
+gc 19:: write()
+gc 19:: read(physical_page=72)
+gc 19:: write()
+gc 19:: read(physical_page=76)
+gc 19:: write()
+gc 19:: read(physical_page=77)
+gc 19:: write()
+gc 19:: erase(block=7)
+cmd 693:: write(38, d) -> success
+cmd 694:: write(79, N) -> success
+cmd 695:: read(14) -> a
+cmd 696:: write(58, A) -> success
+cmd 697:: read(15) -> d
+cmd 698:: write(58, 5) -> success
+cmd 699:: write(10, T) -> success
+cmd 700:: trim(13) -> success
+cmd 701:: write(15, i) -> success
+cmd 702:: trim(52) -> success
+cmd 703:: read(0) -> h
+cmd 704:: write(58, g) -> success
+cmd 705:: read(35) -> 5
+cmd 706:: trim(79) -> success
+cmd 707:: write(34, t) -> success
+cmd 708:: read(63) -> 1
+cmd 709:: write(68, R) -> success
+cmd 710:: write(0, 8) -> success
+cmd 711:: read(19) -> j
+cmd 712:: read(48) -> B
+cmd 713:: read(5) -> Z
+cmd 714:: read(6) -> 6
+cmd 715:: write(54, b) -> success
+cmd 716:: read(38) -> d
+cmd 717:: trim(6) -> success
+cmd 718:: write(24, X) -> success
+cmd 719:: trim(64) -> success
+cmd 720:: write(73, s) -> success
+cmd 721:: write(42, L) -> success
+gc 20:: read(physical_page=82)
+gc 20:: write()
+gc 20:: read(physical_page=88)
+gc 20:: write()
+gc 20:: erase(block=8)
+gc 20:: read(physical_page=91)
+gc 20:: write()
+gc 20:: read(physical_page=96)
+gc 20:: write()
+gc 20:: erase(block=9)
+cmd 722:: read(29) -> y
+cmd 723:: read(27) -> g
+cmd 724:: write(30, 7) -> success
+cmd 725:: write(12, 2) -> success
+cmd 726:: write(46, p) -> success
+cmd 727:: write(7, x) -> success
+cmd 728:: read(23) -> O
+cmd 729:: read(32) -> T
+cmd 730:: write(71, x) -> success
+cmd 731:: write(7, V) -> success
+cmd 732:: read(4) -> 9
+cmd 733:: write(34, o) -> success
+cmd 734:: write(64, D) -> success
+cmd 735:: write(22, L) -> success
+cmd 736:: read(64) -> D
+cmd 737:: write(16, 0) -> success
+cmd 738:: read(58) -> g
+cmd 739:: write(26, I) -> success
+cmd 740:: write(70, 5) -> success
+cmd 741:: read(62) -> l
+cmd 742:: write(10, V) -> success
+cmd 743:: read(11) -> Y
+cmd 744:: write(59, 9) -> success
+cmd 745:: write(57, m) -> success
+cmd 746:: write(63, w) -> success
+gc 21:: read(physical_page=102)
+gc 21:: write()
+gc 21:: read(physical_page=103)
+gc 21:: write()
+gc 21:: read(physical_page=107)
+gc 21:: write()
+gc 21:: read(physical_page=108)
+gc 21:: write()
+gc 21:: erase(block=10)
+gc 21:: read(physical_page=113)
+gc 21:: write()
+gc 21:: read(physical_page=114)
+gc 21:: write()
+gc 21:: read(physical_page=116)
+gc 21:: write()
+gc 21:: read(physical_page=117)
+gc 21:: write()
+gc 21:: erase(block=11)
+cmd 747:: write(30, 2) -> success
+cmd 748:: write(52, w) -> success
+cmd 749:: write(12, 9) -> success
+cmd 750:: write(16, W) -> success
+cmd 751:: read(37) -> 9
+cmd 752:: trim(54) -> success
+cmd 753:: read(10) -> V
+cmd 754:: read(7) -> V
+cmd 755:: read(42) -> L
+cmd 756:: write(37, g) -> success
+cmd 757:: write(63, a) -> success
+cmd 758:: write(46, J) -> success
+cmd 759:: write(52, C) -> success
+cmd 760:: read(62) -> l
+cmd 761:: write(40, 9) -> success
+cmd 762:: write(49, 4) -> success
+cmd 763:: read(18) -> 6
+cmd 764:: write(79, H) -> success
+cmd 765:: read(45) -> k
+cmd 766:: read(12) -> 9
+cmd 767:: read(76) -> 0
+cmd 768:: write(11, S) -> success
+gc 22:: read(physical_page=1)
+gc 22:: write()
+gc 22:: read(physical_page=2)
+gc 22:: write()
+gc 22:: read(physical_page=3)
+gc 22:: write()
+gc 22:: read(physical_page=5)
+gc 22:: write()
+gc 22:: read(physical_page=7)
+gc 22:: write()
+gc 22:: read(physical_page=9)
+gc 22:: write()
+gc 22:: erase(block=0)
+gc 22:: read(physical_page=11)
+gc 22:: write()
+gc 22:: read(physical_page=12)
+gc 22:: write()
+gc 22:: read(physical_page=13)
+gc 22:: write()
+gc 22:: read(physical_page=14)
+gc 22:: write()
+gc 22:: read(physical_page=16)
+gc 22:: write()
+gc 22:: read(physical_page=17)
+gc 22:: write()
+gc 22:: read(physical_page=18)
+gc 22:: write()
+gc 22:: read(physical_page=19)
+gc 22:: write()
+gc 22:: erase(block=1)
+gc 22:: read(physical_page=20)
+gc 22:: write()
+gc 22:: read(physical_page=22)
+gc 22:: write()
+gc 22:: read(physical_page=23)
+gc 22:: write()
+gc 22:: read(physical_page=24)
+gc 22:: write()
+gc 22:: read(physical_page=27)
+gc 22:: write()
+gc 22:: read(physical_page=28)
+gc 22:: write()
+gc 22:: read(physical_page=29)
+gc 22:: write()
+gc 22:: erase(block=2)
+gc 22:: read(physical_page=31)
+gc 22:: write()
+gc 22:: read(physical_page=33)
+gc 22:: write()
+gc 22:: read(physical_page=34)
+gc 22:: write()
+gc 22:: read(physical_page=37)
+gc 22:: write()
+gc 22:: erase(block=3)
+cmd 769:: read(71) -> x
+cmd 770:: write(41, Y) -> success
+cmd 771:: write(52, Z) -> success
+cmd 772:: trim(27) -> success
+cmd 773:: write(18, E) -> success
+cmd 774:: trim(43) -> success
+cmd 775:: read(60) -> Q
+cmd 776:: write(49, h) -> success
+cmd 777:: write(48, z) -> success
+cmd 778:: write(0, 6) -> success
+cmd 779:: read(35) -> 5
+cmd 780:: write(10, u) -> success
+cmd 781:: trim(4) -> success
+cmd 782:: read(33) -> j
+cmd 783:: write(1, j) -> success
+cmd 784:: write(26, M) -> success
+cmd 785:: read(17) -> G
+cmd 786:: write(35, G) -> success
+cmd 787:: read(18) -> E
+cmd 788:: write(44, s) -> success
+cmd 789:: read(58) -> g
+cmd 790:: write(18, D) -> success
+cmd 791:: read(71) -> x
+cmd 792:: write(42, y) -> success
+cmd 793:: write(9, 5) -> success
+cmd 794:: write(15, n) -> success
+gc 23:: read(physical_page=43)
+gc 23:: write()
+gc 23:: read(physical_page=45)
+gc 23:: write()
+gc 23:: read(physical_page=48)
+gc 23:: write()
+gc 23:: read(physical_page=49)
+gc 23:: write()
+gc 23:: erase(block=4)
+gc 23:: read(physical_page=51)
+gc 23:: write()
+gc 23:: read(physical_page=52)
+gc 23:: write()
+gc 23:: read(physical_page=53)
+gc 23:: write()
+gc 23:: read(physical_page=59)
+gc 23:: write()
+gc 23:: erase(block=5)
+cmd 795:: write(43, W) -> success
+cmd 796:: write(6, I) -> success
+cmd 797:: read(42) -> y
+cmd 798:: write(39, J) -> success
+cmd 799:: read(75) -> e
+cmd 800:: write(16, P) -> success
+cmd 801:: read(70) -> 5
+cmd 802:: write(7, j) -> success
+cmd 803:: write(20, n) -> success
+cmd 804:: write(44, m) -> success
+cmd 805:: write(47, Y) -> success
+cmd 806:: write(41, t) -> success
+cmd 807:: write(70, I) -> success
+cmd 808:: read(0) -> 6
+cmd 809:: write(25, 1) -> success
+cmd 810:: write(56, F) -> success
+gc 24:: read(physical_page=61)
+gc 24:: write()
+gc 24:: read(physical_page=62)
+gc 24:: write()
+gc 24:: read(physical_page=63)
+gc 24:: write()
+gc 24:: read(physical_page=68)
+gc 24:: write()
+gc 24:: read(physical_page=69)
+gc 24:: write()
+gc 24:: erase(block=6)
+gc 24:: read(physical_page=71)
+gc 24:: write()
+gc 24:: read(physical_page=74)
+gc 24:: write()
+gc 24:: read(physical_page=75)
+gc 24:: write()
+gc 24:: read(physical_page=76)
+gc 24:: write()
+gc 24:: read(physical_page=78)
+gc 24:: write()
+gc 24:: read(physical_page=79)
+gc 24:: write()
+gc 24:: erase(block=7)
+gc 24:: read(physical_page=81)
+gc 24:: write()
+gc 24:: read(physical_page=83)
+gc 24:: write()
+gc 24:: read(physical_page=84)
+gc 24:: write()
+gc 24:: read(physical_page=85)
+gc 24:: write()
+gc 24:: read(physical_page=87)
+gc 24:: write()
+gc 24:: read(physical_page=89)
+gc 24:: write()
+gc 24:: erase(block=8)
+cmd 811:: read(34) -> o
+cmd 812:: write(52, W) -> success
+cmd 813:: write(2, p) -> success
+cmd 814:: write(35, 0) -> success
+cmd 815:: write(63, E) -> success
+cmd 816:: write(75, p) -> success
+cmd 817:: read(15) -> n
+cmd 818:: write(59, 0) -> success
+cmd 819:: write(69, L) -> success
+cmd 820:: write(56, 3) -> success
+cmd 821:: read(33) -> j
+cmd 822:: read(30) -> 2
+cmd 823:: write(77, y) -> success
+cmd 824:: write(53, 9) -> success
+cmd 825:: write(77, I) -> success
+cmd 826:: trim(2) -> success
+cmd 827:: write(48, t) -> success
+cmd 828:: read(41) -> t
+cmd 829:: write(2, r) -> success
+gc 25:: read(physical_page=90)
+gc 25:: write()
+gc 25:: read(physical_page=91)
+gc 25:: write()
+gc 25:: read(physical_page=92)
+gc 25:: write()
+gc 25:: read(physical_page=95)
+gc 25:: write()
+gc 25:: read(physical_page=96)
+gc 25:: write()
+gc 25:: erase(block=9)
+gc 25:: read(physical_page=100)
+gc 25:: write()
+gc 25:: read(physical_page=102)
+gc 25:: write()
+gc 25:: read(physical_page=104)
+gc 25:: write()
+gc 25:: read(physical_page=107)
+gc 25:: write()
+gc 25:: read(physical_page=108)
+gc 25:: write()
+gc 25:: read(physical_page=109)
+gc 25:: write()
+gc 25:: erase(block=10)
+gc 25:: read(physical_page=110)
+gc 25:: write()
+gc 25:: read(physical_page=111)
+gc 25:: write()
+gc 25:: read(physical_page=112)
+gc 25:: write()
+gc 25:: read(physical_page=113)
+gc 25:: write()
+gc 25:: read(physical_page=115)
+gc 25:: write()
+gc 25:: read(physical_page=119)
+gc 25:: write()
+gc 25:: erase(block=11)
+cmd 830:: write(14, k) -> success
+cmd 831:: read(0) -> 6
+cmd 832:: write(5, 6) -> success
+cmd 833:: trim(48) -> success
+cmd 834:: write(41, Z) -> success
+cmd 835:: trim(35) -> success
+cmd 836:: write(35, X) -> success
+cmd 837:: read(41) -> Z
+cmd 838:: read(59) -> 0
+cmd 839:: read(29) -> y
+cmd 840:: read(60) -> Q
+cmd 841:: write(41, P) -> success
+cmd 842:: read(75) -> p
+cmd 843:: write(70, q) -> success
+cmd 844:: read(18) -> D
+cmd 845:: read(45) -> k
+cmd 846:: read(79) -> H
+cmd 847:: write(8, W) -> success
+cmd 848:: write(6, 4) -> success
+cmd 849:: write(52, V) -> success
+cmd 850:: write(45, r) -> success
+cmd 851:: write(43, 8) -> success
+cmd 852:: read(70) -> q
+cmd 853:: read(45) -> r
+cmd 854:: write(58, Z) -> success
+cmd 855:: write(25, H) -> success
+gc 26:: read(physical_page=1)
+gc 26:: write()
+gc 26:: read(physical_page=2)
+gc 26:: write()
+gc 26:: read(physical_page=3)
+gc 26:: write()
+gc 26:: read(physical_page=4)
+gc 26:: write()
+gc 26:: read(physical_page=7)
+gc 26:: write()
+gc 26:: read(physical_page=8)
+gc 26:: write()
+gc 26:: read(physical_page=9)
+gc 26:: write()
+gc 26:: erase(block=0)
+gc 26:: read(physical_page=10)
+gc 26:: write()
+gc 26:: read(physical_page=12)
+gc 26:: write()
+gc 26:: read(physical_page=13)
+gc 26:: write()
+gc 26:: read(physical_page=14)
+gc 26:: write()
+gc 26:: read(physical_page=17)
+gc 26:: write()
+gc 26:: read(physical_page=18)
+gc 26:: write()
+gc 26:: erase(block=1)
+gc 26:: read(physical_page=21)
+gc 26:: write()
+gc 26:: read(physical_page=22)
+gc 26:: write()
+gc 26:: read(physical_page=23)
+gc 26:: write()
+gc 26:: read(physical_page=24)
+gc 26:: write()
+gc 26:: read(physical_page=25)
+gc 26:: write()
+gc 26:: read(physical_page=26)
+gc 26:: write()
+gc 26:: erase(block=2)
+cmd 856:: write(19, G) -> success
+cmd 857:: read(22) -> L
+cmd 858:: read(38) -> d
+cmd 859:: read(0) -> 6
+cmd 860:: write(52, 8) -> success
+cmd 861:: read(20) -> n
+cmd 862:: read(57) -> m
+cmd 863:: write(42, O) -> success
+cmd 864:: read(24) -> X
+cmd 865:: write(16, b) -> success
+cmd 866:: read(28) -> F
+cmd 867:: write(76, M) -> success
+cmd 868:: trim(66) -> success
+cmd 869:: read(46) -> J
+cmd 870:: trim(77) -> success
+cmd 871:: read(6) -> 4
+cmd 872:: read(30) -> 2
+cmd 873:: trim(3) -> success
+cmd 874:: read(17) -> G
+cmd 875:: trim(47) -> success
+cmd 876:: write(20, V) -> success
+cmd 877:: write(13, c) -> success
+cmd 878:: write(32, O) -> success
+cmd 879:: write(2, B) -> success
+cmd 880:: read(11) -> S
+cmd 881:: write(61, D) -> success
+cmd 882:: write(36, x) -> success
+gc 27:: read(physical_page=31)
+gc 27:: write()
+gc 27:: read(physical_page=32)
+gc 27:: write()
+gc 27:: read(physical_page=33)
+gc 27:: write()
+gc 27:: read(physical_page=35)
+gc 27:: write()
+gc 27:: read(physical_page=37)
+gc 27:: write()
+gc 27:: erase(block=3)
+gc 27:: read(physical_page=40)
+gc 27:: write()
+gc 27:: read(physical_page=41)
+gc 27:: write()
+gc 27:: read(physical_page=42)
+gc 27:: write()
+gc 27:: read(physical_page=43)
+gc 27:: write()
+gc 27:: read(physical_page=45)
+gc 27:: write()
+gc 27:: read(physical_page=46)
+gc 27:: write()
+gc 27:: read(physical_page=47)
+gc 27:: write()
+gc 27:: erase(block=4)
+gc 27:: read(physical_page=51)
+gc 27:: write()
+gc 27:: read(physical_page=52)
+gc 27:: write()
+gc 27:: read(physical_page=53)
+gc 27:: write()
+gc 27:: read(physical_page=54)
+gc 27:: write()
+gc 27:: read(physical_page=55)
+gc 27:: write()
+gc 27:: read(physical_page=57)
+gc 27:: write()
+gc 27:: erase(block=5)
+cmd 883:: write(26, O) -> success
+cmd 884:: read(15) -> n
+cmd 885:: read(6) -> 4
+cmd 886:: write(50, T) -> success
+cmd 887:: write(73, L) -> success
+cmd 888:: read(39) -> J
+cmd 889:: write(31, 9) -> success
+cmd 890:: write(66, J) -> success
+cmd 891:: write(5, V) -> success
+cmd 892:: trim(19) -> success
+cmd 893:: trim(16) -> success
+cmd 894:: read(39) -> J
+cmd 895:: read(37) -> g
+cmd 896:: write(37, f) -> success
+cmd 897:: read(40) -> 9
+cmd 898:: write(59, v) -> success
+cmd 899:: write(58, L) -> success
+cmd 900:: write(33, 5) -> success
+cmd 901:: write(2, u) -> success
+cmd 902:: write(27, t) -> success
+gc 28:: read(physical_page=61)
+gc 28:: write()
+gc 28:: read(physical_page=64)
+gc 28:: write()
+gc 28:: read(physical_page=65)
+gc 28:: write()
+gc 28:: read(physical_page=69)
+gc 28:: write()
+gc 28:: erase(block=6)
+gc 28:: read(physical_page=70)
+gc 28:: write()
+gc 28:: read(physical_page=71)
+gc 28:: write()
+gc 28:: read(physical_page=73)
+gc 28:: write()
+gc 28:: read(physical_page=76)
+gc 28:: write()
+gc 28:: read(physical_page=77)
+gc 28:: write()
+gc 28:: read(physical_page=78)
+gc 28:: write()
+gc 28:: erase(block=7)
+gc 28:: read(physical_page=81)
+gc 28:: write()
+gc 28:: read(physical_page=82)
+gc 28:: write()
+gc 28:: read(physical_page=83)
+gc 28:: write()
+gc 28:: read(physical_page=84)
+gc 28:: write()
+gc 28:: read(physical_page=85)
+gc 28:: write()
+gc 28:: read(physical_page=87)
+gc 28:: write()
+gc 28:: read(physical_page=88)
+gc 28:: write()
+gc 28:: erase(block=8)
+cmd 903:: write(56, t) -> success
+cmd 904:: read(45) -> r
+cmd 905:: read(7) -> j
+cmd 906:: read(62) -> l
+cmd 907:: read(60) -> Q
+cmd 908:: write(12, M) -> success
+cmd 909:: write(56, I) -> success
+cmd 910:: trim(57) -> success
+cmd 911:: read(46) -> J
+cmd 912:: write(7, T) -> success
+cmd 913:: write(59, c) -> success
+cmd 914:: read(26) -> O
+cmd 915:: read(26) -> O
+cmd 916:: write(22, 8) -> success
+cmd 917:: write(26, S) -> success
+cmd 918:: write(42, Z) -> success
+cmd 919:: read(34) -> o
+cmd 920:: write(17, p) -> success
+cmd 921:: read(73) -> L
+cmd 922:: write(51, L) -> success
+cmd 923:: write(4, 8) -> success
+cmd 924:: read(1) -> j
+cmd 925:: read(51) -> L
+cmd 926:: write(39, 6) -> success
+cmd 927:: write(25, 5) -> success
+gc 29:: read(physical_page=91)
+gc 29:: write()
+gc 29:: read(physical_page=92)
+gc 29:: write()
+gc 29:: read(physical_page=93)
+gc 29:: write()
+gc 29:: read(physical_page=95)
+gc 29:: write()
+gc 29:: read(physical_page=97)
+gc 29:: write()
+gc 29:: read(physical_page=98)
+gc 29:: write()
+gc 29:: read(physical_page=99)
+gc 29:: write()
+gc 29:: erase(block=9)
+gc 29:: read(physical_page=100)
+gc 29:: write()
+gc 29:: read(physical_page=102)
+gc 29:: write()
+gc 29:: read(physical_page=103)
+gc 29:: write()
+gc 29:: read(physical_page=108)
+gc 29:: write()
+gc 29:: erase(block=10)
+gc 29:: read(physical_page=111)
+gc 29:: write()
+gc 29:: read(physical_page=114)
+gc 29:: write()
+gc 29:: read(physical_page=115)
+gc 29:: write()
+gc 29:: read(physical_page=116)
+gc 29:: write()
+gc 29:: read(physical_page=117)
+gc 29:: write()
+gc 29:: read(physical_page=119)
+gc 29:: write()
+gc 29:: erase(block=11)
+cmd 928:: read(18) -> D
+cmd 929:: write(24, L) -> success
+cmd 930:: read(56) -> I
+cmd 931:: read(34) -> o
+cmd 932:: read(9) -> 5
+cmd 933:: read(35) -> X
+cmd 934:: write(24, 5) -> success
+cmd 935:: write(56, 3) -> success
+cmd 936:: read(43) -> 8
+cmd 937:: write(5, z) -> success
+cmd 938:: read(12) -> M
+cmd 939:: write(42, H) -> success
+cmd 940:: write(51, p) -> success
+cmd 941:: write(10, I) -> success
+cmd 942:: read(8) -> W
+cmd 943:: read(2) -> u
+cmd 944:: write(33, N) -> success
+cmd 945:: trim(20) -> success
+cmd 946:: read(25) -> 5
+cmd 947:: trim(7) -> success
+cmd 948:: trim(62) -> success
+cmd 949:: read(0) -> 6
+cmd 950:: read(78) -> z
+cmd 951:: write(47, D) -> success
+cmd 952:: write(53, g) -> success
+cmd 953:: read(73) -> L
+cmd 954:: read(33) -> N
+cmd 955:: write(13, 3) -> success
+cmd 956:: write(49, x) -> success
+cmd 957:: write(25, N) -> success
+gc 30:: read(physical_page=0)
+gc 30:: write()
+gc 30:: read(physical_page=1)
+gc 30:: write()
+gc 30:: read(physical_page=2)
+gc 30:: write()
+gc 30:: read(physical_page=5)
+gc 30:: write()
+gc 30:: read(physical_page=6)
+gc 30:: write()
+gc 30:: read(physical_page=7)
+gc 30:: write()
+gc 30:: erase(block=0)
+gc 30:: read(physical_page=10)
+gc 30:: write()
+gc 30:: read(physical_page=11)
+gc 30:: write()
+gc 30:: read(physical_page=12)
+gc 30:: write()
+gc 30:: read(physical_page=13)
+gc 30:: write()
+gc 30:: read(physical_page=14)
+gc 30:: write()
+gc 30:: read(physical_page=16)
+gc 30:: write()
+gc 30:: erase(block=1)
+gc 30:: read(physical_page=20)
+gc 30:: write()
+gc 30:: read(physical_page=21)
+gc 30:: write()
+gc 30:: read(physical_page=22)
+gc 30:: write()
+gc 30:: read(physical_page=23)
+gc 30:: write()
+gc 30:: read(physical_page=25)
+gc 30:: write()
+gc 30:: read(physical_page=27)
+gc 30:: write()
+gc 30:: read(physical_page=29)
+gc 30:: write()
+gc 30:: erase(block=2)
+cmd 958:: read(23) -> O
+cmd 959:: write(2, J) -> success
+cmd 960:: write(35, 1) -> success
+cmd 961:: read(10) -> I
+cmd 962:: trim(71) -> success
+cmd 963:: write(60, J) -> success
+cmd 964:: write(30, E) -> success
+cmd 965:: write(29, p) -> success
+cmd 966:: read(52) -> 8
+cmd 967:: write(59, p) -> success
+cmd 968:: write(40, V) -> success
+cmd 969:: write(22, i) -> success
+cmd 970:: write(33, k) -> success
+cmd 971:: read(58) -> L
+cmd 972:: write(26, p) -> success
+cmd 973:: write(55, d) -> success
+gc 31:: read(physical_page=30)
+gc 31:: write()
+gc 31:: read(physical_page=31)
+gc 31:: write()
+gc 31:: read(physical_page=32)
+gc 31:: write()
+gc 31:: read(physical_page=33)
+gc 31:: write()
+gc 31:: read(physical_page=34)
+gc 31:: write()
+gc 31:: read(physical_page=38)
+gc 31:: write()
+gc 31:: erase(block=3)
+gc 31:: read(physical_page=40)
+gc 31:: write()
+gc 31:: read(physical_page=42)
+gc 31:: write()
+gc 31:: read(physical_page=43)
+gc 31:: write()
+gc 31:: read(physical_page=44)
+gc 31:: write()
+gc 31:: read(physical_page=45)
+gc 31:: write()
+gc 31:: read(physical_page=46)
+gc 31:: write()
+gc 31:: read(physical_page=47)
+gc 31:: write()
+gc 31:: read(physical_page=49)
+gc 31:: write()
+gc 31:: erase(block=4)
+gc 31:: read(physical_page=56)
+gc 31:: write()
+gc 31:: read(physical_page=58)
+gc 31:: write()
+gc 31:: read(physical_page=59)
+gc 31:: write()
+gc 31:: erase(block=5)
+cmd 974:: trim(70) -> success
+cmd 975:: read(79) -> H
+cmd 976:: write(10, X) -> success
+cmd 977:: write(13, W) -> success
+cmd 978:: read(40) -> V
+cmd 979:: write(54, F) -> success
+cmd 980:: read(58) -> L
+cmd 981:: read(10) -> X
+cmd 982:: read(5) -> z
+cmd 983:: write(60, 8) -> success
+cmd 984:: write(29, 5) -> success
+cmd 985:: write(71, c) -> success
+cmd 986:: read(9) -> 5
+cmd 987:: read(8) -> W
+cmd 988:: read(47) -> D
+cmd 989:: read(40) -> V
+cmd 990:: write(35, I) -> success
+cmd 991:: write(31, 3) -> success
+cmd 992:: read(56) -> 3
+cmd 993:: trim(34) -> success
+cmd 994:: read(14) -> k
+cmd 995:: read(10) -> X
+cmd 996:: read(75) -> p
+cmd 997:: trim(15) -> success
+cmd 998:: write(68, J) -> success
+cmd 999:: trim(38) -> success
+
+FTL     0: 61   1: 63   2:110   4: 16   5: 81   6: 11   8: 10   9: 65  10: 18  11:  2  12: 14  13: 19  14:  7  17: 15  18: 64  22:117  23:  5 
+       24: 79  25: 90  26:119  27:  1  28: 94  29: 22  30:113  31: 25  32: 76  33:118  35: 24  36: 91  37:107  39: 17  40:116  41:  8  42: 82 
+       43: 13  44: 71  45: 12  46: 97  47: 86  49: 89  50:103  51: 83  52: 72  53: 87  54: 20  55:  0  56: 80  58:108  59:115  60: 21  61: 77 
+       63:100  64: 93  66:106  67:  3  68: 26  69:102  71: 23  73:104  74: 95  75:101  76: 73  78:  4  79: 99 
+Block 0          1          2          3          4          5          6          7          8          9          10         11         
+Page  0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 1111111111 1111111111 
+      0000000000 1111111111 2222222222 3333333333 4444444444 5555555555 6666666666 7777777777 8888888888 9999999999 0000000000 1111111111 
+      0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 
+State vvvvvvvvvv vvvvvvvvvv vvvvvvvEEE EEEEEEEEEE EEEEEEEEEE EEEEEEEEEE vvvvvvvvvv vvvvvvvvvv vvvvvvvvvv vvvvvvvvvv vvvvvvvvvv vvvvvvvvvv 
+Data  dtSMzOdkPq W4r8Mp86XW F85cI3J                                     56ujD5nRXl xm8MVcODL5 3zHpINDg3x NxoDFK2J9H EpLTL9JfLu J1JEppVikp 
+Live  ++++++ ++  ++++++++++ +++++++                                      + +++      +++  ++ + ++++  ++ + ++ +++ + + +++++ +++  +  + +++++ 
+
+Physical Operations Per Block
+Erases   8          8          8          8          8          8          7          7          7          7          7          7          Sum: 90
+Writes  80         80         77         70         70         70         70         70         70         70         70         70          Sum: 867
+Reads   72         73         60         62         61         64         59         55         49         52         55         52          Sum: 714
+
+Logical Operation Sums
+  Write count 867 (0 failed)
+  Read count  370 (0 failed)
+  Trim count  107 (0 failed)
+
+Times
+  Erase time 90000.00
+  Write time 34680.00
+  Read time  7140.00
+  Total time 131820.00
+
